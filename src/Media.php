@@ -25,7 +25,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -53,7 +53,7 @@ class Media {
 	 *
 	 * @return array movies
 	 */
-	public function getNowPlayingMovies( $page = 1) {
+	public function getNowPlayingMovies( $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'NOW_PLAYING_MOVIES' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -61,7 +61,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class Media {
 	 *
 	 * @return array movies
 	 */
-	public function getUpcomingMovies( $page = 1) {
+	public function getUpcomingMovies( $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'POPULAR_MOVIES' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -79,7 +79,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -89,7 +89,7 @@ class Media {
 	 *
 	 * @return array movies
 	 */
-	public function getLatestMovies( $page = 1) {
+	public function getLatestMovies( $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'LATEST_MOVIES' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -97,7 +97,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -107,7 +107,7 @@ class Media {
 	 *
 	 * @return array TV shows
 	 */
-	public function getPopularTvs( $page = 1) {
+	public function getPopularTvs( $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'POPULAR_TVS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -115,7 +115,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -133,7 +133,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -143,7 +143,7 @@ class Media {
 	 *
 	 * @return array TV shows
 	 */
-	public function getOnTheAirTvs( $page = 1) {
+	public function getOnTheAirTvs( $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'ON_THE_AIR_TVS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -151,7 +151,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -169,7 +169,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -187,7 +187,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -197,7 +197,7 @@ class Media {
 	 *
 	 * @return object movie
 	 */
-	public function getMovieById($id){
+	public function getMovieById( $id ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'MOVIE' ) .
 		       "/" .
@@ -205,7 +205,7 @@ class Media {
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' );
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -215,7 +215,7 @@ class Media {
 	 *
 	 * @return object TV show
 	 */
-	public function getTvById($id){
+	public function getTvById( $id ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'TV' ) .
 		       "/" .
@@ -223,7 +223,7 @@ class Media {
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' );
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 
@@ -235,17 +235,17 @@ class Media {
 	 *
 	 * @return object TV season
 	 */
-	public function getTvSeason($tvId, $seasonNumber = 1){
+	public function getTvSeason( $tvId, $seasonNumber = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'TV' ) .
 		       "/" .
 		       $tvId .
-		       getenv('SEASON') .
+		       getenv( 'SEASON' ) .
 		       $seasonNumber .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' );
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -257,19 +257,19 @@ class Media {
 	 *
 	 * @return object TV episode
 	 */
-	public function getTvEpisode($tvId, $seasonNumber = 1, $episodeNumber = 1){
+	public function getTvEpisode( $tvId, $seasonNumber = 1, $episodeNumber = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'TV' ) .
 		       "/" .
 		       $tvId .
-		       getenv('SEASON') .
+		       getenv( 'SEASON' ) .
 		       $seasonNumber .
-		       getenv('EPISODE') .
+		       getenv( 'EPISODE' ) .
 		       $episodeNumber .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' );
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -279,16 +279,16 @@ class Media {
 	 *
 	 * @return array reviews
 	 */
-	public function getReviewsForMovie($id){
+	public function getReviewsForMovie( $id ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'MOVIE' ) .
 		       "/" .
 		       $id .
-		       getenv('REVIEWS') .
+		       getenv( 'REVIEWS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' );
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -298,16 +298,16 @@ class Media {
 	 *
 	 * @return array trailers
 	 */
-	public function getVideosForMovie($id){
+	public function getVideosForMovie( $id ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'MOVIE' ) .
 		       "/" .
 		       $id .
-		       getenv('VIDEOS') .
+		       getenv( 'VIDEOS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' );
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -317,16 +317,16 @@ class Media {
 	 *
 	 * @return array trailers
 	 */
-	public function getVideosForTv($id){
+	public function getVideosForTv( $id ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'TV' ) .
 		       "/" .
 		       $id .
-		       getenv('VIDEOS') .
+		       getenv( 'VIDEOS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' );
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -336,16 +336,16 @@ class Media {
 	 *
 	 * @return array results
 	 */
-	public function getCreditsForMovie($id){
+	public function getCreditsForMovie( $id ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'MOVIE' ) .
 		       "/" .
 		       $id .
-		       getenv('CREDITS') .
+		       getenv( 'CREDITS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' );
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -355,16 +355,16 @@ class Media {
 	 *
 	 * @return array results
 	 */
-	public function getCreditsForTv($id){
+	public function getCreditsForTv( $id ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'TV' ) .
 		       "/" .
 		       $id .
-		       getenv('CREDITS') .
+		       getenv( 'CREDITS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' );
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -376,20 +376,20 @@ class Media {
 	 *
 	 * @return array results
 	 */
-	public function searchInMovies($query, $page = 1, $includeAdult = false){
+	public function searchInMovies( $query, $page = 1, $includeAdult = false ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'SEARCH' ) .
-		       getenv('MOVIE') .
+		       getenv( 'MOVIE' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' ) .
-		       getenv('QUERY') .
+		       getenv( 'QUERY' ) .
 		       $query .
-		       getenv('PAGE') .
+		       getenv( 'PAGE' ) .
 		       $page .
-		       getenv('INCLUDE_ADULT') .
+		       getenv( 'INCLUDE_ADULT' ) .
 		       $includeAdult;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -400,17 +400,18 @@ class Media {
 	 *
 	 * @return array results
 	 */
-	public function searchInTvs($query, $page = 1){
+	public function searchInTvs( $query, $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'SEARCH' ) .
-		       getenv('TV') .
+		       getenv( 'TV' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' ) .
-		       getenv('QUERY') .
+		       getenv( 'QUERY' ) .
 		       $query .
-		       getenv('PAGE') .
+		       getenv( 'PAGE' ) .
 		       $page;
-		return $this->getData($url);
+
+		return $this->getData( $url );
 	}
 
 	/**
@@ -422,20 +423,20 @@ class Media {
 	 *
 	 * @return array results
 	 */
-	public function searchInPeople($query, $page = 1, $includeAdult = false){
+	public function searchInPeople( $query, $page = 1, $includeAdult = false ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'SEARCH' ) .
-		       getenv('PERSON') .
+		       getenv( 'PERSON' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' ) .
-		       getenv('QUERY') .
+		       getenv( 'QUERY' ) .
 		       $query .
-		       getenv('PAGE') .
+		       getenv( 'PAGE' ) .
 		       $page .
-		       getenv('INCLUDE_ADULT') .
+		       getenv( 'INCLUDE_ADULT' ) .
 		       $includeAdult;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -446,18 +447,18 @@ class Media {
 	 *
 	 * @return array results
 	 */
-	public function searchInCompanies($query, $page = 1){
+	public function searchInCompanies( $query, $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'SEARCH' ) .
-		       getenv('COMPANY') .
+		       getenv( 'COMPANY' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' ) .
-		       getenv('QUERY') .
+		       getenv( 'QUERY' ) .
 		       $query .
-		       getenv('PAGE') .
+		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -468,18 +469,18 @@ class Media {
 	 *
 	 * @return array results
 	 */
-	public function searchInCollections($query, $page = 1){
+	public function searchInCollections( $query, $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'SEARCH' ) .
-		       getenv('COLLECTION') .
+		       getenv( 'COLLECTION' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' ) .
-		       getenv('QUERY') .
+		       getenv( 'QUERY' ) .
 		       $query .
-		       getenv('PAGE') .
+		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -490,18 +491,18 @@ class Media {
 	 *
 	 * @return array results
 	 */
-	public function searchInKeywords($query, $page = 1){
+	public function searchInKeywords( $query, $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'SEARCH' ) .
-		       getenv('KEYWORD') .
+		       getenv( 'KEYWORD' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' ) .
-		       getenv('QUERY') .
+		       getenv( 'QUERY' ) .
 		       $query .
-		       getenv('PAGE') .
+		       getenv( 'PAGE' ) .
 		       $page;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 	/**
@@ -513,20 +514,20 @@ class Media {
 	 *
 	 * @return array results
 	 */
-	public function searchInAll($query, $page = 1, $includeAdult = false){
+	public function searchInAll( $query, $page = 1, $includeAdult = false ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'SEARCH' ) .
-		       getenv('MULTI') .
+		       getenv( 'MULTI' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
 		       getenv( 'LANGUAGE' ) .
-		       getenv('QUERY') .
+		       getenv( 'QUERY' ) .
 		       $query .
-		       getenv('PAGE') .
+		       getenv( 'PAGE' ) .
 		       $page .
-		       getenv('INCLUDE_ADULT') .
+		       getenv( 'INCLUDE_ADULT' ) .
 		       $includeAdult;
 
-		return $this->getData($url);
+		return $this->getData( $url );
 	}
 
 
@@ -537,13 +538,25 @@ class Media {
 	 *
 	 * @return mixed Array | Object of results
 	 */
-	private function getData($url){
+	private function getData( $url ) {
 
 		try {
-			return json_decode(file_get_contents($url), true);
+			$downloaded = @file_get_contents(( $url ));
+
+			if(!$downloaded){
+				return 'Http error occurred' . PHP_EOL;
+			}
+
+			$result = @json_decode($downloaded, true);
+
+			if(!$result){
+				return 'Parsing error occurred' . PHP_EOL;
+			}
+
+			return $result;
 		}
-		catch (\Exception $exc){
-			return $exc->getCode();
+		catch (\Exception $err){
+			return $err->getMessage();
 		}
 	}
 }

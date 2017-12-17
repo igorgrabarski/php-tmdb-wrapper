@@ -9,4 +9,4 @@ $dotenv->load();
 
 $test = new \Tech\Igorg\Media();
 
-print_r($test->getAiringTodayTvs(68686868));
+print_r($test->getPopularMovies(2));
