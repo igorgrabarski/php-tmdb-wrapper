@@ -9,4 +9,4 @@ $dotenv->load();
 
 $test = new \Tech\Igorg\Media();
 
-print_r($test->getPopularMovies(1));
+print_r($test->getPopularMovies(2));
