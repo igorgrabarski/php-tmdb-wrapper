@@ -21,7 +21,7 @@ class Media {
 		       getenv( 'PAGE' ) .
 		       $page;
 
-		return json_decode(file_get_contents($url), );
+		return json_decode(file_get_contents($url), true);
 	}
 
 	public function getTopRatedMovies( $page ) {
