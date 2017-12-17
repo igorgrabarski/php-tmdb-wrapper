@@ -6,14 +6,16 @@ use Dotenv\Dotenv;
 
 /**
  *
- * Base class for both Movie and Tv
+ * Media class
  */
 class Media {
 
 	/**
+	 * Get popular movies
+	 *
 	 * @param int $page
 	 *
-	 * @return mixed
+	 * @return array movies
 	 */
 	public function getPopularMovies( $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
@@ -27,9 +29,11 @@ class Media {
 	}
 
 	/**
+	 * Get top rated movies
+	 *
 	 * @param int $page
 	 *
-	 * @return mixed
+	 * @return array movies
 	 */
 	public function getTopRatedMovies( $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
@@ -43,11 +47,13 @@ class Media {
 	}
 
 	/**
-	 * @param $page
+	 * Get now playing movies
 	 *
-	 * @return mixed
+	 * @param int $page
+	 *
+	 * @return array movies
 	 */
-	public function getNowPlayingMovies( $page ) {
+	public function getNowPlayingMovies( $page = 1) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'NOW_PLAYING_MOVIES' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -59,11 +65,13 @@ class Media {
 	}
 
 	/**
-	 * @param $page
+	 * Get upcoming movies
 	 *
-	 * @return mixed
+	 * @param int $page
+	 *
+	 * @return array movies
 	 */
-	public function getUpcomingMovies( $page ) {
+	public function getUpcomingMovies( $page = 1) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'POPULAR_MOVIES' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -75,11 +83,13 @@ class Media {
 	}
 
 	/**
-	 * @param $page
+	 * Get latest movies
 	 *
-	 * @return mixed
+	 * @param int $page
+	 *
+	 * @return array movies
 	 */
-	public function getLatestMovies( $page ) {
+	public function getLatestMovies( $page = 1) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'LATEST_MOVIES' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -91,11 +101,13 @@ class Media {
 	}
 
 	/**
-	 * @param $page
+	 * Get popular TV shows
 	 *
-	 * @return mixed
+	 * @param int $page
+	 *
+	 * @return array TV shows
 	 */
-	public function getPopularTvs( $page ) {
+	public function getPopularTvs( $page = 1) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'POPULAR_TVS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -107,11 +119,13 @@ class Media {
 	}
 
 	/**
-	 * @param $page
+	 * Get top rated TV shows
 	 *
-	 * @return mixed
+	 * @param int $page
+	 *
+	 * @return array TV shows
 	 */
-	public function getTopRatedTvs( $page ) {
+	public function getTopRatedTvs( $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'TOP_RATED_TVS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -123,11 +137,13 @@ class Media {
 	}
 
 	/**
-	 * @param $page
+	 * Get on the air TV shows
 	 *
-	 * @return mixed
+	 * @param int $page
+	 *
+	 * @return array TV shows
 	 */
-	public function getOnTheAirTvs( $page ) {
+	public function getOnTheAirTvs( $page = 1) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'ON_THE_AIR_TVS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -139,11 +155,13 @@ class Media {
 	}
 
 	/**
-	 * @param $page
+	 * Get airing today TV shows
 	 *
-	 * @return mixed
+	 * @param int $page
+	 *
+	 * @return array TV shows
 	 */
-	public function getAiringTodayTvs( $page ) {
+	public function getAiringTodayTvs( $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'AIRING_TODAY_TVS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -155,11 +173,13 @@ class Media {
 	}
 
 	/**
-	 * @param $page
+	 * Get latest TV shows
 	 *
-	 * @return mixed
+	 * @param int $page
+	 *
+	 * @return array TV shows
 	 */
-	public function getLatestTvs( $page ) {
+	public function getLatestTvs( $page = 1 ) {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'LATEST_TVS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
@@ -171,9 +191,11 @@ class Media {
 	}
 
 	/**
-	 * @param $id
+	 * Get movie by id
 	 *
-	 * @return mixed
+	 * @param int $id
+	 *
+	 * @return object movie
 	 */
 	public function getMovieById($id){
 		$url = getenv( 'BASE_URL' ) .
@@ -187,9 +209,11 @@ class Media {
 	}
 
 	/**
-	 * @param $id
+	 * Get TV show by id number
 	 *
-	 * @return mixed
+	 * @param int $id
+	 *
+	 * @return object TV show
 	 */
 	public function getTvById($id){
 		$url = getenv( 'BASE_URL' ) .
@@ -204,12 +228,14 @@ class Media {
 
 
 	/**
-	 * @param $tvId
-	 * @param $seasonNumber
+	 * Get TV season
 	 *
-	 * @return mixed
+	 * @param int $tvId
+	 * @param int $seasonNumber
+	 *
+	 * @return object TV season
 	 */
-	public function getTvSeason($tvId, $seasonNumber){
+	public function getTvSeason($tvId, $seasonNumber = 1){
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'TV' ) .
 		       "/" .
@@ -223,13 +249,15 @@ class Media {
 	}
 
 	/**
-	 * @param $tvId
-	 * @param $seasonNumber
-	 * @param $episodeNumber
+	 * Get TV episode
 	 *
-	 * @return mixed
+	 * @param int $tvId
+	 * @param  int $seasonNumber
+	 * @param int $episodeNumber
+	 *
+	 * @return object TV episode
 	 */
-	public function getTvEpisode($tvId, $seasonNumber, $episodeNumber){
+	public function getTvEpisode($tvId, $seasonNumber = 1, $episodeNumber = 1){
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'TV' ) .
 		       "/" .
@@ -245,9 +273,11 @@ class Media {
 	}
 
 	/**
-	 * @param $id
+	 * Get reviews for movie
 	 *
-	 * @return mixed
+	 * @param int $id
+	 *
+	 * @return array reviews
 	 */
 	public function getReviewsForMovie($id){
 		$url = getenv( 'BASE_URL' ) .
@@ -262,9 +292,11 @@ class Media {
 	}
 
 	/**
-	 * @param $id
+	 * Get trailers for movie
 	 *
-	 * @return mixed
+	 * @param int $id
+	 *
+	 * @return array trailers
 	 */
 	public function getVideosForMovie($id){
 		$url = getenv( 'BASE_URL' ) .
@@ -279,9 +311,11 @@ class Media {
 	}
 
 	/**
-	 * @param $id
+	 * Get trailers for TV show
 	 *
-	 * @return mixed
+	 * @param int $id
+	 *
+	 * @return array trailers
 	 */
 	public function getVideosForTv($id){
 		$url = getenv( 'BASE_URL' ) .
@@ -296,9 +330,11 @@ class Media {
 	}
 
 	/**
-	 * @param $id
+	 * Get credits for movie
 	 *
-	 * @return mixed
+	 * @param int $id
+	 *
+	 * @return array results
 	 */
 	public function getCreditsForMovie($id){
 		$url = getenv( 'BASE_URL' ) .
@@ -313,9 +349,11 @@ class Media {
 	}
 
 	/**
-	 * @param $id
+	 * Get credits for TV show
 	 *
-	 * @return mixed
+	 * @param int $id
+	 *
+	 * @return array results
 	 */
 	public function getCreditsForTv($id){
 		$url = getenv( 'BASE_URL' ) .
@@ -330,11 +368,13 @@ class Media {
 	}
 
 	/**
-	 * @param $query
+	 * Search in movies
+	 *
+	 * @param string $query
 	 * @param int $page
 	 * @param bool $includeAdult
 	 *
-	 * @return mixed
+	 * @return array results
 	 */
 	public function searchInMovies($query, $page = 1, $includeAdult = false){
 		$url = getenv( 'BASE_URL' ) .
@@ -353,10 +393,12 @@ class Media {
 	}
 
 	/**
-	 * @param $query
+	 * Search in TV shows
+	 *
+	 * @param string $query
 	 * @param int $page
 	 *
-	 * @return mixed
+	 * @return array results
 	 */
 	public function searchInTvs($query, $page = 1){
 		$url = getenv( 'BASE_URL' ) .
@@ -372,11 +414,13 @@ class Media {
 	}
 
 	/**
-	 * @param $query
+	 * Search for people
+	 *
+	 * @param string $query
 	 * @param int $page
 	 * @param bool $includeAdult
 	 *
-	 * @return mixed
+	 * @return array results
 	 */
 	public function searchInPeople($query, $page = 1, $includeAdult = false){
 		$url = getenv( 'BASE_URL' ) .
@@ -395,10 +439,12 @@ class Media {
 	}
 
 	/**
-	 * @param $query
+	 * Search in companies
+	 *
+	 * @param string $query
 	 * @param int $page
 	 *
-	 * @return mixed
+	 * @return array results
 	 */
 	public function searchInCompanies($query, $page = 1){
 		$url = getenv( 'BASE_URL' ) .
@@ -415,10 +461,12 @@ class Media {
 	}
 
 	/**
-	 * @param $query
+	 * Search in collections
+	 *
+	 * @param string $query
 	 * @param int $page
 	 *
-	 * @return mixed
+	 * @return array results
 	 */
 	public function searchInCollections($query, $page = 1){
 		$url = getenv( 'BASE_URL' ) .
@@ -435,10 +483,12 @@ class Media {
 	}
 
 	/**
-	 * @param $query
+	 * Search in keywords
+	 *
+	 * @param string $query
 	 * @param int $page
 	 *
-	 * @return mixed
+	 * @return array results
 	 */
 	public function searchInKeywords($query, $page = 1){
 		$url = getenv( 'BASE_URL' ) .
@@ -455,11 +505,13 @@ class Media {
 	}
 
 	/**
-	 * @param $query
+	 * Perform a multi search
+	 *
+	 * @param string $query
 	 * @param int $page
 	 * @param bool $includeAdult
 	 *
-	 * @return mixed
+	 * @return array results
 	 */
 	public function searchInAll($query, $page = 1, $includeAdult = false){
 		$url = getenv( 'BASE_URL' ) .
@@ -486,6 +538,12 @@ class Media {
 	 * @return mixed Array | Object of results
 	 */
 	private function getData($url){
-		return json_decode(file_get_contents($url), true);
+
+		try {
+			return json_decode(file_get_contents($url), true);
+		}
+		catch (\Exception $exc){
+			return $exc->getCode();
+		}
 	}
 }
