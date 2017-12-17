@@ -1,0 +1,21 @@
+{
+    "name": "igor/tmdb-php-wrapper",
+    "description": "Simple php wrapper for TMDB API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Grabarski",
+            "email": "igorgrabarski@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^2.4"
+    },
+
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}
