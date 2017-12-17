@@ -9,4 +9,4 @@ $dotenv->load();
 
 $test = new \Tech\Igorg\Media();
 
-print_r($test->getPopularMovies(2));
+print_r($test->searchInPeople('John', 2, true));

@@ -89,13 +89,11 @@ class Media {
 	 *
 	 * @return array movies
 	 */
-	public function getLatestMovies( $page = 1 ) {
+	public function getLatestMovies() {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'LATEST_MOVIES' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
-		       getenv( 'LANGUAGE' ) .
-		       getenv( 'PAGE' ) .
-		       $page;
+		       getenv( 'LANGUAGE' );
 
 		return $this->getData( $url );
 	}
@@ -183,9 +181,7 @@ class Media {
 		$url = getenv( 'BASE_URL' ) .
 		       getenv( 'LATEST_TVS' ) .
 		       "?api_key=" . getenv( 'API_KEY' ) .
-		       getenv( 'LANGUAGE' ) .
-		       getenv( 'PAGE' ) .
-		       $page;
+		       getenv( 'LANGUAGE' );
 
 		return $this->getData( $url );
 	}
