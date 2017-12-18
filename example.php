@@ -16,52 +16,59 @@ $media = new Media();
 
 
 // Available methods:
-$media->getPopularMovies();
+try {
+	$media->getPopularMovies();
 
-$media->getNowPlayingMovies();
+	$media->getNowPlayingMovies();
 
-$media->getUpcomingMovies();
+	$media->getUpcomingMovies();
 
-$media->getLatestMovies();
+	$media->getLatestMovies();
 
-$media->getPopularTvs();
+	$media->getPopularTvs();
 
-$media->getTopRatedTvs();
+	$media->getTopRatedTvs();
 
-$media->getAiringTodayTvs();
+	$media->getAiringTodayTvs();
 
-$media->getOnTheAirTvs();
+	$media->getOnTheAirTvs();
 
-$media->getLatestTvs();
+	$media->getLatestTvs();
 
-$media->getMovieById(346364);
+	$media->getMovieById( 346364 );
 
-$media->getTvById(1418);
+	$media->getTvById( 1418 );
 
-$media->getTvSeason(1418);
+	$media->getTvSeason( 1418 );
 
-$media->getTvEpisode(1418);
+	$media->getTvEpisode( 1418 );
 
-$media->getReviewsForMovie(346364);
+	$media->getReviewsForMovie( 346364 );
 
-$media->getVideosForMovie(346364);
+	$media->getVideosForMovie( 346364 );
 
-$media->getVideosForTv(1418);
+	$media->getVideosForTv( 1418 );
 
-$media->getCreditsForMovie(346364);
+	$media->getCreditsForMovie( 346364 );
 
-$media->getCreditsForTv(1418);
+	$media->getCreditsForTv( 1418 );
 
-$media->searchInMovies('Pulp');
+	$media->searchInMovies( 'Pulp' );
 
-$media->searchInTvs('Game');
+	$media->searchInTvs( 'Game' );
 
-$media->searchInPeople('John');
+	$media->searchInPeople( 'John' );
 
-$media->searchInCompanies('warner');
+	$media->searchInCompanies( 'warner' );
 
-$media->searchInCollections('last');
+	$media->searchInCollections( 'last' );
 
-$media->searchInKeywords('drama');
+	$media->searchInKeywords( 'drama' );
 
-$media->searchInAll('Bill');
+	$media->searchInAll( 'Bill' );
+
+}
+
+catch(Exception $exception){
+	echo $exception->getMessage();
+}
