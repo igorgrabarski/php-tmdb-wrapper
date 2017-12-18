@@ -537,21 +537,20 @@ class Media {
 	private function getData( $url ) {
 
 		try {
-			$downloaded = @file_get_contents(( $url ));
+			$downloaded = @file_get_contents( ( $url ) );
 
-			if(!$downloaded){
+			if ( ! $downloaded ) {
 				return 'Http error occurred' . PHP_EOL;
 			}
 
-			$result = @json_decode($downloaded, true);
+			$result = @json_decode( $downloaded, true );
 
-			if(!$result){
+			if ( ! $result ) {
 				return 'Parsing error occurred' . PHP_EOL;
 			}
 
 			return $result;
-		}
-		catch (\Exception $err){
+		} catch ( \Exception $err ) {
 			return $err->getMessage();
 		}
 	}
