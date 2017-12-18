@@ -4,7 +4,7 @@ use Dotenv\Dotenv;
 use Tech\Igorg\Media;
 
 // Composer autoloader
-require_once './vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 // Load .env settings file
 $dotenv = new Dotenv(__DIR__);
