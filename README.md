@@ -1,6 +1,6 @@
-###Simple PHP Wrapper for TMDB API
+### Simple PHP Wrapper for TMDB API
 
-####Install
+#### Install
 
 * Install Composer from `https://getcomposer.org/download/`
 
