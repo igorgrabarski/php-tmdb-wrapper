@@ -396,18 +396,7 @@ class Media {
 		$includeAdult = null
 	) {
 
-		if(!is_null($id) && !is_integer($id)){
-			throw new Exception('MovieID must be integer' . PHP_EOL);
-		}
-		if(!is_null($seasonNumber) && !is_integer($seasonNumber)){
-			throw new Exception('Season number must be integer' . PHP_EOL);
-		}
-		if(!is_null($episodeNumber) && !is_integer($episodeNumber)){
-			throw new Exception('Episode number must be integer' . PHP_EOL);
-		}
-		if(!is_null($includeAdult) && !is_bool($includeAdult)){
-			throw new Exception('includeAdult field must be boolean' . PHP_EOL);
-		}
+		$this->validateInput($id, $seasonNumber, $episodeNumber, $includeAdult);
 
 		$url = null;
 
@@ -726,6 +715,31 @@ class Media {
 			return $result;
 		} catch ( Exception $err ) {
 			return $err->getMessage();
+		}
+	}
+
+	/**
+	 * Validates the input for correct values
+	 *
+	 * @param $id
+	 * @param $seasonNumber
+	 * @param $episodeNumber
+	 * @param $includeAdult
+	 *
+	 * @throws Exception
+	 */
+	private function validateInput($id, $seasonNumber, $episodeNumber, $includeAdult){
+		if(!is_null($id) && !is_integer($id)){
+			throw new Exception('MovieID must be integer' . PHP_EOL);
+		}
+		if(!is_null($seasonNumber) && !is_integer($seasonNumber)){
+			throw new Exception('Season number must be integer' . PHP_EOL);
+		}
+		if(!is_null($episodeNumber) && !is_integer($episodeNumber)){
+			throw new Exception('Episode number must be integer' . PHP_EOL);
+		}
+		if(!is_null($includeAdult) && !is_bool($includeAdult)){
+			throw new Exception('includeAdult field must be boolean' . PHP_EOL);
 		}
 	}
 }
