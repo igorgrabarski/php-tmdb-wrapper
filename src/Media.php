@@ -396,6 +396,7 @@ class Media {
 		$includeAdult = null
 	) {
 
+		// Perform input validation
 		$this->validateInput($id, $seasonNumber, $episodeNumber, $includeAdult);
 
 		$url = null;
@@ -721,10 +722,10 @@ class Media {
 	/**
 	 * Validates the input for correct values
 	 *
-	 * @param $id
-	 * @param $seasonNumber
-	 * @param $episodeNumber
-	 * @param $includeAdult
+	 * @param int $id
+	 * @param int $seasonNumber
+	 * @param int $episodeNumber
+	 * @param bool $includeAdult
 	 *
 	 * @throws Exception
 	 */
